@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hubungi Kami</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #000000, #2A004E);
+            color: white;
+        }
+        .d-flex a i:hover {
+            transform: scale(1.2); 
+            transition: transform 0.3s ease; 
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><b>Portofolio Febri</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h1 class="mb-4"><b>Kontak Febri</b></h1>
+        <p>Kalo ada yang mau disampein, disini aja ya!!</p>
+        <form id="contactForm" action="https://formspree.io/f/mzzzolpl" method="POST">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="name" class="form-label">Nama</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Masukkan Email Kamu</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="col-12">
+                    <label for="subject" class="form-label">Subjek</label>
+                    <input type="text" class="form-control" id="subject" name="subject" required>
+                </div>
+                <div class="col-12">
+                    <label for="message" class="form-label">Ada Pesan Apa?</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Ayo Kirim</button>
+                    
+                </div>
+            </div>
+        </form>
+
+        <div class="mt-5">
+            <h2 class="mb-3">Sosial Media</h2>
+            <div class="d-flex gap-3">
+                <a href="https://wa.me/6288238319047/?text=Hai Putra" target="_blank" class="text-decoration-none ">
+                    <i class="fab fa-whatsapp fa-2x text-success"></i>
+                </a>
+                <a href="https://www.tiktok.com/@hallo_youuuuu?_t=ZS-8t2Cs0tODyc&_r=1" target="_blank"
+                    class="text-decoration-none">
+                    <i class="fab fa-tiktok fa-2x text-dark"></i>
+                </a>
+                <a href="https://www.instagram.com/febriiputraa?igsh=MTN2NW41OXZvd250eg==" target="_blank"
+                    class="text-decoration-none">
+                    <i class="fab fa-instagram fa-2x text-danger"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-center text-white py-4">
+        <div class="container">
+            <p>&copy; 2025 Febri Putra. All Rights Reserved.</p>
+            <p>Ikuti Aku di
+                <a href="https://www.instagram.com/febriiputraa?igsh=MTN2NW41OXZvd250eg==" target="_blank" class="text-decoration-none text-light">Instagram</a> |
+                <a href="https://github.com/putragantengbgt" target="_blank" class="text-decoration-none text-light">GitHub</a>
+                |
+                <a href="https://wa.me/6288238319047/?text=Hai Putra" target="_blank" class="text-decoration-none text-light">Whatsapp</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = 'thank_you.html'; 
+                } else {
+                    alert('Terjadi kesalahan, silakan coba lagi.');
+                }
+            }).catch(error => {
+                alert('Terjadi kesalahan, silakan coba lagi.');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+
+<style>
+    .portfolio-item .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+</style>
+
+<body style="background: linear-gradient(135deg, #2A004E, #000000);">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><b>Portofolio Febri</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center text-white"><b>Portofolio Febri</b></h1>
+        <p class="text-center text-white">Nah ini adalah beberapa proyek yang pernah saya kerjakan</p>
+
+        <div class="text-center mb-4">
+            <button class="btn btn-outline-light filter-btn" data-category="all">Semua</button>
+            <button class="btn btn-outline-light filter-btn" data-category="web">Web Development</button>
+            <button class="btn btn-outline-light filter-btn" data-category="design">Desain Grafis</button>
+            <button class="btn btn-outline-light filter-btn" data-category="iot">Internet Of Things</button>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-4 portfolio-item" data-category="web">
+                <div class="card">
+                    <img src="PROJEKSMP.png" class="card-img-top" alt="Projek 1">
+                    <div class="card-body">
+                        <h5 class="card-title text-black">Proyek Pembuatan Website Sekolah Menengah Pertama</h5>
+                        <p class="card-text text-black">Proyek ini melibatkan pembuatan website responsif tentang
+                            Sekolah Menengah
+                            Pertama.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 portfolio-item" data-category="web">
+                <div class="card">
+                    <img src="SD.jpg" class="card-img-top" alt="Projek 2">
+                    <div class="card-body">
+                        <h5 class="card-title text-black">Proyek Pembuatan Website Sekolah Dasar</h5>
+                        <p class="card-text text-black">Proyek ini melibatkan pembuatan website responsif tentang salah
+                            satu
+                            Sekolah Dasar di Yogyakarta.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 portfolio-item" data-category="iot">
+                <div class="card">
+                    <img src="PROJEKTEMPAT.jpg" class="card-img-top" alt="Project 3">
+                    <div class="card-body">
+                        <h5 class="card-title text-black">Proyek IoT</h5>
+                        <p class="card-text text-black">Saya dan tim membuat proyek IoT yaitu tempat sampah automatis
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 portfolio-item" data-category="design">
+                <div class="card">
+                    <img src="PROJEKZERO.png" class="card-img-top" alt="Projek 3">
+                    <div class="card-body">
+                        <h5 class="card-title text-black">Proyek UI/UX</h5>
+                        <p class="card-text text-black">Proyek ini adalah Tugas pembuatan desain aplikasi dari salah
+                            satu mata
+                            kuliah.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 portfolio-item" data-category="iot">
+                <div class="card">
+                    <img src="MENTOR.jpg" class="card-img-top" alt="Project 3">
+                    <div class="card-body">
+                        <h5 class="card-title text-black">Mentoring</h5>
+                        <p class="card-text text-black">Saya dipercayai menjadi mentor bagi anak anak PKL untuk
+                            membangun proyek
+                            IoT di Fakultas Ilmu
+                            Komputer, Universitas Kuningan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('.filter-btn').click(function() {
+            const category = $(this).attr('data-category');
+            if (category === 'all') {
+                $('.portfolio-item').show();
+            } else {
+                $('.portfolio-item').hide();
+                $(`.portfolio-item[data-category="${category}"]`).show();
+            }
+        });
+    });
+    </script>
+
+    <footer class="bg-dark text-center text-white py-4">
+        <div class="container">
+            <p>&copy; 2025 Febri Putra. All Rights Reserved.</p>
+            <p>Ikuti Aku di
+                <a href="https://www.instagram.com/febriiputraa?igsh=MTN2NW41OXZvd250eg==" target="_blank"
+                    class="text-decoration-none text-light">Instagram</a> |
+                <a href="https://github.com/putragantengbgt" target="_blank"
+                    class="text-decoration-none text-light">GitHub</a>
+                |
+                <a href="https://wa.me/6288238319047/?text=Hai Putra" target="_blank"
+                    class="text-decoration-none text-light">Whatsapp</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
